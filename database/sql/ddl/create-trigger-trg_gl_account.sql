@@ -11,6 +11,7 @@ CREATE TRIGGER trg_gl_before_insert
             SET New.type = 'account';
         ELSE
             SET NEW.type = 'class';
+            SET NEW.parent_no = NULL;
         END IF;
     END $$
 
