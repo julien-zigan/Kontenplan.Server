@@ -20,8 +20,9 @@ public class GLAccountRepositoryImpl implements GLAccountRepository {
 
     @Override
     @Transactional
-    public void save(GLAccount theGLAccount) {
+    public GLAccount save(GLAccount theGLAccount) {
         entityManager.persist(theGLAccount);
+        return theGLAccount;
     }
 
     @Override
