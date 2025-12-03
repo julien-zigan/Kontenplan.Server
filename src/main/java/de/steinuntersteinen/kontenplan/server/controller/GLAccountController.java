@@ -29,7 +29,8 @@ public class GLAccountController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createGLAccount(@RequestBody GLAccount glAccount2create, UriComponentsBuilder uriComponentsBuilder) {
+    public ResponseEntity<Void> createGLAccount(@RequestBody GLAccount glAccount2create,
+                                                UriComponentsBuilder uriComponentsBuilder) {
         GLAccount createdGLAccount = glAccountRepository.save(glAccount2create);
         URI uriOfcreatedGLAccoutn = uriComponentsBuilder
                 .path("/api/v1/glaccounts/{no}")
