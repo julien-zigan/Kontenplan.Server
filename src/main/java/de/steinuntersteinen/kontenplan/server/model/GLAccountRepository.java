@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface GLAccountRepository {
 
-    void save(GLAccount theGLAccount);
+    GLAccount save(GLAccount theGLAccount);
 
     List<GLAccount> findAll();
 
