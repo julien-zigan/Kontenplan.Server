@@ -7,5 +7,6 @@ public interface GLAccountRepository {
     void save(GLAccount theGLAccount);
 
     List<GLAccount> findAll();
+
 }
 

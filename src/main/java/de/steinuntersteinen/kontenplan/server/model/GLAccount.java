@@ -3,6 +3,7 @@ package de.steinuntersteinen.kontenplan.server.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @Entity
 @Table(name="gl_accounts")
@@ -97,5 +98,17 @@ public class GLAccount {
                 ", balance=" + balance +
                 ", parentNo='" + parentNo + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        GLAccount glAccount = (GLAccount) o;
+        return Objects.equals(no, glAccount.no) && type == glAccount.type && Objects.equals(name, glAccount.name) && Objects.equals(description, glAccount.description) && Objects.equals(balance, glAccount.balance) && Objects.equals(parentNo, glAccount.parentNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(no, type, name, description, balance, parentNo);
     }
 }

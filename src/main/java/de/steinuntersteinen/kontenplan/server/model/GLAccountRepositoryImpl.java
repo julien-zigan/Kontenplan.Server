@@ -26,8 +26,7 @@ public class GLAccountRepositoryImpl implements GLAccountRepository {
 
     @Override
     public List<GLAccount> findAll() {
-        TypedQuery<GLAccount> query = entityManager.createQuery("FROM GLAccount",  GLAccount.class);
-
+        TypedQuery<GLAccount> query = entityManager.createQuery("From GLAccount", GLAccount.class);
         return query.getResultList();
     }
 }
