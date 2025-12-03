@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS gl_accounts;
 CREATE TABLE gl_accounts
 (
     no          CHAR(20) NOT NULL,
-    type        ENUM ('class', 'category', 'account') NOT NULL ,
+    type        ENUM ('CLASS', 'CATEGORY', 'ACCOUNT') NOT NULL ,
     name        VARCHAR(255),
     description TEXT,
     balance     DECIMAL(18, 2),
